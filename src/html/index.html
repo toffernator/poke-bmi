@@ -7,10 +7,15 @@
   <title>Poke BMI</title>
   <link rel="stylesheet" href="../../node_modules/normalize.css/normalize.css">
   <link rel="stylesheet" href="../styles/styles.css">
+
+  <!-- Google sheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost&family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
 
-<body>
-  <main class="grid-container">
+<body class="black-bg">
+  <main class="grid-container white-bg">
     <span id="pokemonInfo">
       <h1 id="pokemonName">Pokemon Name</h1>
       <h2 id="bmiCategory">BMI Category</h2>
@@ -18,8 +23,8 @@
     <img id="sprite" src="https://via.placeholder.com/96" />
     <form id="controls" onsubmit="handleFormSubmit(event)">
       <input id="pokemonNameSearch" type="search" name="pokemonName" placeholder="Pokemon name..." />
-      <input id="pokemonFormSubmit" type="submit" />
-      <input type="button" value="Shuffle" onclick="handleRandom(event)" />
+      <input id="pokemonFormSubmit" class="black-btn" type="submit" value="Go!" />
+      <input type="button" class="black-btn" value="Shuffle" onclick="handleRandom(event)" />
     </form>
   </main>
 

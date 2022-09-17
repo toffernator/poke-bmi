@@ -1,13 +1,61 @@
 /* 2 rows 2 columns */
 * {
   margin: 5px;
+  color: rgb(47,47,47);
+  font-family: 'Jost', sans-serif;
 }
 
 h1 {
   margin: 5px;
+  font-family: 'Luckiest Guy', cursive;
+}
+
+h2 {
+  font-family: 'Jost', sans-serif;
+}
+
+input {
+  padding: 5px;
+  border: 0px;
+}
+
+input[type='search'] {
+  outline-style: auto;
+}
+
+
+.white-bg {
+  background-image: url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png);
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgb(255, 255, 255);
+}
+
+.black-bg {
+  background-image: url(https://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png);
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgb(66, 66, 66);
 }
 
 .grid-container {
+  padding: 5px;
+
+  border-radius: 0.5em;
+  box-shadow: 3px 3px 10px 3px #191919;
+
   width: clamp(720px, 720px, 70%);
   margin: auto;
   display: grid;
@@ -33,3 +81,15 @@ h1 {
   grid-column: span 2;
   justify-self: center;
 }
+
+.black-btn {
+  cursor: pointer;
+  background-color: rgb(66, 66, 66);
+  color: #FFFFFF;
+  border-radius: 5px;
+}
+
+.black-btn:active {
+  box-shadow: inset 3px 3px 3px 3px #000000;
+}
+
