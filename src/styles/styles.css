@@ -20,6 +20,7 @@ input {
 }
 
 input[type='search'] {
+  padding: 5px;
   outline-style: auto;
 }
 

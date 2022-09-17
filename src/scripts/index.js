@@ -8,6 +8,9 @@ const searchFieldElement = document.getElementById('pokemonNameSearch');
 const spriteImg = document.getElementById('sprite');
 const pokemonNameElement = document.getElementById('pokemonName');
 const bmiCategoryElement = document.getElementById('bmiCategory');
+spriteImg.src = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png';
+pokemonNameElement.innerHTML = 'Pikachu';
+bmiCategoryElement.innerHTML = 'Underweight';
 function bmi(height, weight) {
     return weight / (height ^ 2);
 }

@@ -22,6 +22,10 @@ const spriteImg: HTMLImageElement = document.getElementById('sprite') as HTMLIma
 const pokemonNameElement: HTMLElement = document.getElementById('pokemonName') as HTMLElement;
 const bmiCategoryElement: HTMLElement = document.getElementById('bmiCategory') as HTMLElement;
 
+spriteImg.src = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png';
+pokemonNameElement.innerHTML = 'Pikachu';
+bmiCategoryElement.innerHTML = 'Underweight';
+
 function bmi(height: number, weight: number): number {
   return weight / (height ^ 2);
 }
