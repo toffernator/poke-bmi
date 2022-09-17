@@ -9,6 +9,8 @@ interface Sprites {
   front_default: string // The default front facing sprite of the pokemon
 }
 
+const pokemons: Record<string | number, Pokemon> = {}
+
 type FetchParams = Parameters<typeof fetch>;
 async function typedFetch<T>(...params: FetchParams): Promise<T> {
   return fetch(...params)
@@ -40,9 +42,17 @@ function bmiLabel(index: number): string {
 }
 
 async function fetchPokemon(idOrName: number | string): Promise<Pokemon> {
-  const pokemon = await typedFetch<Pokemon>(`https://pokeapi.co/api/v2/pokemon/${idOrName}/`);
-  pokemon['weight'] *= 10; // Convert hectogram to kilogram
-  pokemon['height'] *= 10; // Convert decimeter to meter
+  let pokemon = pokemons[idOrName];
+
+  if (pokemon == null) {
+    // Cache miss
+    pokemon = await typedFetch<Pokemon>(`https://pokeapi.co/api/v2/pokemon/${idOrName}/`);
+    pokemon['weight'] *= 10; // Convert hectogram to kilogram
+    pokemon['height'] *= 10; // Convert decimeter to meter
+
+    pokemons[idOrName] = pokemon
+  }
+
   return pokemon;
 }
 

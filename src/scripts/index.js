@@ -1,4 +1,5 @@
 "use strict";
+const pokemons = {};
 async function typedFetch(...params) {
     return fetch(...params)
         .then((resp) => resp.json());
@@ -29,9 +30,14 @@ function bmiLabel(index) {
     }
 }
 async function fetchPokemon(idOrName) {
-    const pokemon = await typedFetch(`https://pokeapi.co/api/v2/pokemon/${idOrName}/`);
-    pokemon['weight'] *= 10; // Convert hectogram to kilogram
-    pokemon['height'] *= 10; // Convert decimeter to meter
+    let pokemon = pokemons[idOrName];
+    if (pokemon == null) {
+        // Cache miss
+        pokemon = await typedFetch(`https://pokeapi.co/api/v2/pokemon/${idOrName}/`);
+        pokemon['weight'] *= 10; // Convert hectogram to kilogram
+        pokemon['height'] *= 10; // Convert decimeter to meter
+        pokemons[idOrName] = pokemon;
+    }
     return pokemon;
 }
 function generateRandomId() {
